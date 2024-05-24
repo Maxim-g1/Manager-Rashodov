@@ -28,8 +28,8 @@ h3 {
 
 .wrapper {
     min-height: 100%;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: white;
+    color: black;
     font-family: 'Roboto', sans-serif;
     padding: 0px 10px;
     overflow: hidden;
@@ -46,7 +46,7 @@ h3 {
 }
 
 .main__column {
-    background-color: rgb(104, 104, 104);
+    background-color: rgb(214, 214, 214);
     border-radius: 10px;
     padding: 10px;
 }
@@ -70,54 +70,63 @@ h3 {
 .unit {
     fill: none;
     stroke-width: 10;
+    animation-name: render;
+  animation-duration: 1.5s;
+  transition-property: all;
+  transition-duration: 1.5s;
 }
+
+.unit:hover {
+    opacity: 0.8;
+    stroke-width: 12;
+  }
 
 .unit:nth-child(1) {
     stroke: green;
-    /* stroke-dasharray: 10 100; */
+    stroke-dasharray: 12 100; 
 
 }
 
 .unit:nth-child(2) {
     stroke: rgb(255, 174, 0);
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -10; */
+     stroke-dasharray: 13 100;
+    stroke-dashoffset: -12; 
 }
 
 .unit:nth-child(3) {
     stroke: aqua;
-    /* stroke-dasharray: 50 100;
-    stroke-dashoffset: -30; */
+     stroke-dasharray: 12 100;
+    stroke-dashoffset: -25; 
 }
 
 .unit:nth-child(4) {
     stroke: violet;
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -80; */
+     stroke-dasharray: 13 100;
+    stroke-dashoffset: -37; 
 }
 
 .unit:nth-child(5) {
     stroke: red;
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -80; */
+     stroke-dasharray: 12 100;
+    stroke-dashoffset: -50; 
 }
 
 .unit:nth-child(6) {
     stroke: darkviolet;
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -80; */
+     stroke-dasharray: 13 100;
+    stroke-dashoffset: -62; 
 }
 
 .unit:nth-child(7) {
     stroke: greenyellow;
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -80; */
+     stroke-dasharray: 12 100;
+    stroke-dashoffset: -75; 
 }
 
 .unit:nth-child(8) {
     stroke: blue;
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -80; */
+     stroke-dasharray: 13 100;
+    stroke-dashoffset: -87; 
 }
 
 
@@ -134,7 +143,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(188, 188, 188);
     border-radius: 5px;
 }
 
@@ -198,7 +207,7 @@ h3 {
 
 .purcashes__row {
     text-align: center;
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(188, 188, 188);
 }
 
 .purcashes__row td {
@@ -224,6 +233,22 @@ h3 {
 
 .purcashes__item[data-category="drinks"] {
     border-left: 5px solid violet;
+}
+
+.purcashes__item[data-category="videogames"] {
+    border-left: 5px solid red;
+}
+
+.purcashes__item[data-category="razvlechenie"] {
+    border-left: 5px solid darkviolet;
+}
+
+.purcashes__item[data-category="lekarstva"] {
+    border-left: 5px solid greenyellow;
+}
+
+.purcashes__item[data-category="drugoe"] {
+    border-left: 5px solid blue;
 }
 
 .purcashes__item .purcashes__item-del {
@@ -261,6 +286,7 @@ h3 {
     border-bottom: 1px solid white;
     background-color: transparent;
     width: 100%;
+    
 }
 
 .editor__form-row input {
@@ -276,7 +302,7 @@ h3 {
 }
 
 .btn {
-    background: rgb(36, 36, 36);
+    background: rgb(188, 188, 188);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -284,8 +310,21 @@ h3 {
 }
 
 .btn:hover {
-    background: rgb(58, 58, 58);
+    background: rgb(87, 87, 87);
     cursor: pointer;
 }
 
 .purcashes__td {}
+
+.hovered {
+    opacity: 0.8;
+    stroke-width: 12;
+  }
+
+@keyframes render {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+
+  

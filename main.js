@@ -6,6 +6,7 @@ const selectCategory = document.getElementById('selectCategory')
 const tbody = document.getElementById('tbody')
 const legend__item = document.querySelectorAll('.legend__item')
 const legend__price = document.querySelectorAll('.legend__price')
+const unitAll = document.querySelectorAll('.unit')
 
 btn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -46,11 +47,23 @@ btn.addEventListener('click', (e) => {
     name.value = ''
     price.value = ''
     if (td2.textContent === "Продукты") {
-        if (td3.textContent > 0) { legend__price[0].textContent = parseInt(legend__price[0].textContent) + parseInt(td3.textContent) } else {
+        if (td3.textContent > 0) { legend__price[0].textContent = parseInt(legend__price[0].textContent) + parseInt(td3.textContent) 
+            //Тут ниже мои безуспешные попытки сделать диаграмму
+            let o = parseInt(legend__price[0].textContent)/(parseInt(legend__price[1].textContent)+parseInt(legend__price[2].textContent)+parseInt(legend__price[3].textContent)+parseInt(legend__price[4].textContent)+parseInt(legend__price[5].textContent)+parseInt(legend__price[6].textContent)+parseInt(legend__price[7].textContent)+1)*100
+    unitAll[0].style.strokeDasharray = '0'+o
+    unitAll[1].style.strokeDashoffset = o
+    
+
+   
+ 
+        } else {
         }
     }
     if (td2.textContent === "ФастФуд") {
-        if (td3.textContent > 0) { legend__price[1].textContent = parseInt(legend__price[1].textContent) + parseInt(td3.textContent) } else {
+        if (td3.textContent > 0) { legend__price[1].textContent = parseInt(legend__price[1].textContent) + parseInt(td3.textContent)
+            
+   
+         } else {
         }
     }
     if (td2.textContent === "Спорт") {
@@ -81,9 +94,13 @@ btn.addEventListener('click', (e) => {
     }
 })
 
-// <!-- <tr class="purcashes__item purcashes__row" data-category="product">
-//                             <td class="purcashes__td">Вода</td>
-//                             <td class="purcashes__td">Напитки</td>
-//                             <td class="purcashes__td">1200</td>
-//                             <td class="purcashes__td"><i class="purcashes__item-del fa-solid fa-xmark"></i></td>
-//                         </tr> -->
+legend__item.forEach(function (item, index) {
+    item.addEventListener('mouseover', function () {
+       unitAll[index].classList.add('hovered');
+    });
+
+
+item.addEventListener('mouseout', function () {
+    unitAll[index].classList.remove('hovered');
+ });
+});
