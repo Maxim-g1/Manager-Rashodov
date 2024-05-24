@@ -49,9 +49,10 @@ btn.addEventListener('click', (e) => {
     if (td2.textContent === "Продукты") {
         if (td3.textContent > 0) { legend__price[0].textContent = parseInt(legend__price[0].textContent) + parseInt(td3.textContent) 
             //Тут ниже мои безуспешные попытки сделать диаграмму
-            let o = parseInt(legend__price[0].textContent)/(parseInt(legend__price[1].textContent)+parseInt(legend__price[2].textContent)+parseInt(legend__price[3].textContent)+parseInt(legend__price[4].textContent)+parseInt(legend__price[5].textContent)+parseInt(legend__price[6].textContent)+parseInt(legend__price[7].textContent)+1)*100
-    unitAll[0].style.strokeDasharray = '0'+o
-    unitAll[1].style.strokeDashoffset = o
+        
+    //         let o = parseInt(legend__price[0].textContent)/(parseInt(legend__price[1].textContent)+parseInt(legend__price[2].textContent)+parseInt(legend__price[3].textContent)+parseInt(legend__price[4].textContent)+parseInt(legend__price[5].textContent)+parseInt(legend__price[6].textContent)+parseInt(legend__price[7].textContent)+1)*100
+    // unitAll[0].style.strokeDasharray = '0'+o
+    // unitAll[1].style.strokeDashoffset = o
     
 
    
