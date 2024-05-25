@@ -7,6 +7,7 @@ const tbody = document.getElementById('tbody')
 const legend__item = document.querySelectorAll('.legend__item')
 const legend__price = document.querySelectorAll('.legend__price')
 const unitAll = document.querySelectorAll('.unit')
+const itog = document.querySelector('.itog')
 
 btn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -41,67 +42,131 @@ btn.addEventListener('click', (e) => {
     i.classList.add('fa-xmark')
     td4.appendChild(i)
     i.addEventListener('click', () => {
+        if (td3.textContent > 0) {
+            if (td2.textContent === "Продукты") {
+                legend__price[0].textContent = parseInt(legend__price[0].textContent) - parseInt(td3.textContent)
+            }
+            if (td2.textContent === "ФастФуд") {
+                legend__price[1].textContent = parseInt(legend__price[1].textContent) - parseInt(td3.textContent)
+            }
+            if (td2.textContent === "Спорт") {
+                legend__price[2].textContent = parseInt(legend__price[2].textContent) - parseInt(td3.textContent)
+            }
+            if (td2.textContent === "Напитки") {
+                legend__price[3].textContent = parseInt(legend__price[3].textContent) - parseInt(td3.textContent)
+            }
+            if (td2.textContent === "Видеоигры") {
+                legend__price[4].textContent = parseInt(legend__price[4].textContent) - parseInt(td3.textContent)
+            }
+            if (td2.textContent === "Развлечения") {
+                legend__price[5].textContent = parseInt(legend__price[5].textContent) - parseInt(td3.textContent)
+            }
+            if (td2.textContent === "Лекарства") {
+                legend__price[6].textContent = parseInt(legend__price[6].textContent) - parseInt(td3.textContent)
+            }
+            if (td2.textContent === "Другое") {
+                legend__price[7].textContent = parseInt(legend__price[7].textContent) - parseInt(td3.textContent)
+            }
+            itog.textContent = parseInt(itog.textContent) - parseInt(td3.textContent)
+        }
         tbody.removeChild(tr)
+
     })
 
     name.value = ''
     price.value = ''
     if (td2.textContent === "Продукты") {
-        if (td3.textContent > 0) { legend__price[0].textContent = parseInt(legend__price[0].textContent) + parseInt(td3.textContent) 
+        if (td3.textContent > 0) {
+            legend__price[0].textContent = parseInt(legend__price[0].textContent) + parseInt(td3.textContent)
             //Тут ниже мои безуспешные попытки сделать диаграмму
-        
-    //         let o = parseInt(legend__price[0].textContent)/(parseInt(legend__price[1].textContent)+parseInt(legend__price[2].textContent)+parseInt(legend__price[3].textContent)+parseInt(legend__price[4].textContent)+parseInt(legend__price[5].textContent)+parseInt(legend__price[6].textContent)+parseInt(legend__price[7].textContent)+1)*100
-    // unitAll[0].style.strokeDasharray = '0'+o
-    // unitAll[1].style.strokeDashoffset = o
-    
 
-   
- 
+            //         let o = parseInt(legend__price[0].textContent)/(parseInt(legend__price[1].textContent)+parseInt(legend__price[2].textContent)+parseInt(legend__price[3].textContent)+parseInt(legend__price[4].textContent)+parseInt(legend__price[5].textContent)+parseInt(legend__price[6].textContent)+parseInt(legend__price[7].textContent)+1)*100
+            // unitAll[0].style.strokeDasharray = '0'+o
+            // unitAll[1].style.strokeDashoffset = o
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
+
+
+
         } else {
         }
+        td2.style.backgroundColor = 'green'
+        td2.style.color = 'white'
     }
     if (td2.textContent === "ФастФуд") {
-        if (td3.textContent > 0) { legend__price[1].textContent = parseInt(legend__price[1].textContent) + parseInt(td3.textContent)
-            
-   
-         } else {
+        if (td3.textContent > 0) {
+            legend__price[1].textContent = parseInt(legend__price[1].textContent) + parseInt(td3.textContent)
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
+
+        } else {
         }
+        td2.style.backgroundColor = 'rgb(255, 174, 0)'
+
     }
     if (td2.textContent === "Спорт") {
-        if (td3.textContent > 0) { legend__price[2].textContent = parseInt(legend__price[2].textContent) + parseInt(td3.textContent) } else {
+        if (td3.textContent > 0) {
+            legend__price[2].textContent = parseInt(legend__price[2].textContent) + parseInt(td3.textContent)
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
+        } else {
         }
+        td2.style.backgroundColor = 'aqua'
+
     }
     if (td2.textContent === "Напитки") {
-        if (td3.textContent > 0) { legend__price[3].textContent = parseInt(legend__price[3].textContent) + parseInt(td3.textContent) } else {
+        if (td3.textContent > 0) {
+            legend__price[3].textContent = parseInt(legend__price[3].textContent) + parseInt(td3.textContent)
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
+        } else {
         }
+        td2.style.backgroundColor = 'violet'
+
     }
     if (td2.textContent === "Видеоигры") {
-        if (td3.textContent > 0) { legend__price[4].textContent = parseInt(legend__price[4].textContent) + parseInt(td3.textContent) } else {
+        if (td3.textContent > 0) {
+            legend__price[4].textContent = parseInt(legend__price[4].textContent) + parseInt(td3.textContent)
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
+        } else {
         }
+        td2.style.backgroundColor = 'red'
+        td2.style.color = 'white'
     }
     if (td2.textContent === "Развлечения") {
-        if (td3.textContent > 0) { legend__price[5].textContent = parseInt(legend__price[5].textContent) + parseInt(td3.textContent) } else {
+        if (td3.textContent > 0) {
+            legend__price[5].textContent = parseInt(legend__price[5].textContent) + parseInt(td3.textContent)
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
+        } else {
         }
+        td2.style.backgroundColor = 'darkviolet'
+        td2.style.color = 'white'
     }
     if (td2.textContent === "Лекарства") {
         if (td3.textContent > 0) {
             legend__price[6].textContent = parseInt(legend__price[6].textContent) + parseInt(td3.textContent)
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
         } else {
         }
+        td2.style.backgroundColor = 'greenyellow'
+
     }
     if (td2.textContent === "Другое") {
-        if (td3.textContent > 0) { legend__price[7].textContent = parseInt(legend__price[7].textContent) + parseInt(td3.textContent) } else {
+        if (td3.textContent > 0) {
+            legend__price[7].textContent = parseInt(legend__price[7].textContent) + parseInt(td3.textContent)
+            itog.textContent = parseInt(itog.textContent) + parseInt(td3.textContent)
+        } else {
         }
+        td2.style.backgroundColor = 'blue'
+        td2.style.color = 'white'
     }
 })
 
 legend__item.forEach(function (item, index) {
     item.addEventListener('mouseover', function () {
-       unitAll[index].classList.add('hovered');
+        unitAll[index].classList.add('hovered');
     });
 
 
-item.addEventListener('mouseout', function () {
-    unitAll[index].classList.remove('hovered');
- });
+    item.addEventListener('mouseout', function () {
+        unitAll[index].classList.remove('hovered');
+    });
 });
+
+
